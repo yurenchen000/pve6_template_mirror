@@ -177,6 +177,10 @@ sub download_aplinfo {
 	eval { read_aplinfo($tmp, {}, $aplinfo->{url}, 1) };
 	die "update failed: $@" if $@;
 
+	# ======= chen added: replace mirror
+	eval { run_command(["sed", "-i", "s#http://mirror.turnkeylinux.org/#https://mirrors.ustc.edu.cn/#", $tmp]) };
+	die "sed failed: unable to sed '$tmp'\n" if $@;
+
 	rename($tmp, "$aplinfodir/$host") or
 	    die "update failed: unable to store data: $!\n";
 
