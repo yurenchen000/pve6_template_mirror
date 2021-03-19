@@ -202,7 +202,8 @@ sub get_apl_sources {
 	},
 	{
 	    host => "releases.turnkeylinux.org",
-	    url => "https://releases.turnkeylinux.org/pve",
+	    #url => "https://releases.turnkeylinux.org/pve",
+	    url => "https://mirrors.ustc.edu.cn/turnkeylinux/metadata/pve",
 	    file => 'aplinfo.dat',
 	},
     ];
